@@ -26,3 +26,5 @@ for objetos in interfaz.ovalos:
     print('Pos_X:', objetos.pos_x)
     print('Pos_Y:', objetos.pos_y)
     print('#################################')
+
+interfaz.activarPantalla()
