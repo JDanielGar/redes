@@ -1,6 +1,8 @@
-from interfaz import *
+from interfaz_objetos import *
 from neurona import *
 from pulsador import *
+
+
 def interaccionNeuronal(neurona):
     direccion = int(input("Seleccione la direccion: \n1.Axonal. \2.Dendrital."));
     neuronaMadre(neurona, direccion);
@@ -12,7 +14,9 @@ def neuronaMadre(neurona, direccion):
         Dendrital(neurona);
         
 def Axonal(neurona, pos_x = 1, pos_y = 0):
-    dibujarEstado(neurona.dato, pos_x, pos_y)
+    print(pos_x)
+    print(pos_y)
+    interfaz.crearOvalo(neurona.dato, pos_x, pos_y)
     pos_x += 1;
     if(len(neurona.axon)>0):
         pos_y = pulsadorY(len(neurona.axon), pos_y);

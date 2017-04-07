@@ -1,20 +1,28 @@
 from graficacion import *
 
-cajon = Neurona('cajon');
-pantalon = Neurona('pantalon');
-chaqueta = Neurona ('chaqueta');
-blusa = Neurona('blusa');
-gafas = Neurona('gafas');
-pantaloneta = Neurona('pantaloneta');
-falda = Neurona('falda');
-blanca = Neurona('blanca');
+a = Neurona('Nathaly');
 
-cajon.conectarAxon(pantalon);
-cajon.conectarAxon(chaqueta);
-cajon.conectarAxon(blusa);
-cajon.conectarAxon(gafas);
-pantalon.conectarAxon(pantaloneta);
-pantalon.conectarAxon(falda);
+b = Neurona('Novia');
+c = Neurona('Humano');
+d = Neurona('Estudiante');
+e = Neurona('Joven');
 
-interaccionNeuronal(cajon);
+f = Neurona('Daniel');
+g = Neurona('Moso');
 
+a.conectarAxon(b);
+a.conectarAxon(c);
+a.conectarAxon(d);
+a.conectarAxon(e);
+
+b.conectarAxon(f);
+b.conectarAxon(g);
+
+interaccionNeuronal(a);
+
+
+for objetos in interfaz.ovalos:
+    print('Nombre:', objetos.neurona)
+    print('Pos_X:', objetos.pos_x)
+    print('Pos_Y:', objetos.pos_y)
+    print('#################################')
