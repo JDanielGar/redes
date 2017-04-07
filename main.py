@@ -10,21 +10,18 @@ e = Neurona('Joven');
 f = Neurona('Daniel');
 g = Neurona('Moso');
 
+h = Neurona('Mamifero');
+
 a.conectarAxon(b);
 a.conectarAxon(c);
-a.conectarAxon(d);
-a.conectarAxon(e);
 
-b.conectarAxon(f);
-b.conectarAxon(g);
+c.conectarAxon(f)
+c.conectarAxon(g)
+c.conectarAxon(h)
+
+h.conectarAxon(d)
+h.conectarAxon(e)
 
 interaccionNeuronal(a);
-
-
-for objetos in interfaz.ovalos:
-    print('Nombre:', objetos.neurona)
-    print('Pos_X:', objetos.pos_x)
-    print('Pos_Y:', objetos.pos_y)
-    print('#################################')
 
 interfaz.activarPantalla()

@@ -4,7 +4,7 @@ from pulsador import *
 
 
 def interaccionNeuronal(neurona):
-    direccion = int(input("Seleccione la direccion: \n1.Axonal. \2.Dendrital."));
+    direccion = int(input("Seleccione la direccion: \n1.Axonal. \n2.Dendrital."));
     neuronaMadre(neurona, direccion);
 
 def neuronaMadre(neurona, direccion):
@@ -14,25 +14,29 @@ def neuronaMadre(neurona, direccion):
         Dendrital(neurona);
         
 def Axonal(neurona, pos_x = 1, pos_y = 0):
-    print(pos_x)
-    print(pos_y)
     interfaz.crearOvalo(neurona.dato, pos_x, pos_y)
-    pos_x += 1;
+    pos_x+=1;
+    print("Aqui esta la pos_y", pos_y)
     if(len(neurona.axon)>0):
-        pos_y = pulsadorY(len(neurona.axon), pos_y);
-        for numero in range(len(pos_y)):
+        posicionesY = determinarPosicion(len(neurona.axon), pos_y)
+        for pos_abs in range(len(posicionesY)):
             for neurona_hija in neurona.axon:
-                Axonal(neurona_hija, pos_x, pos_y[numero])
-                numero+=1;
-            break
+                Axonal(neurona_hija, pos_x, posicionesY[pos_abs]);
+                pos_abs+=1
+            break;
     else:
-        print("Neurona sin hijos")
-        
-def Dendrital(neurona, pos_x = 1):
-    pos_x += 1;
-    pos_y = len(neurona.dendrita);
-    for neurona_hija in neurona.dendrita:
-        print("Hola2")
+        print("La neurona:", neurona.dato,"no tiene mas conexiones");
 
-
-        
+def Dendrital(neurona, pos_x = 1, pos_y = 0):
+    interfaz.crearOvalo(neurona.dato, pos_x, pos_y)
+    pos_x+=1;
+    print("Aqui esta la pos_y", pos_y)
+    if(len(neurona.dendrita)>0):
+        posicionesY = determinarPosicion(len(neurona.dendrita), pos_y)
+        for pos_abs in range(len(posicionesY)):
+            for neurona_hija in neurona.dendrita:
+                Dendrital(neurona_hija, pos_x, posicionesY[pos_abs]);
+                pos_abs+=1
+            break;
+    else:
+        print("La neurona:", neurona.dato,"no tiene mas conexiones");
