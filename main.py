@@ -1,26 +1,22 @@
 from graficacion import *
 
-a = Neurona('Nathaly');
+a = Neurona('numeros');
 
-b = Neurona('Novia');
-c = Neurona('Humano');
-d = Neurona('Estudiante');
-e = Neurona('Joven');
+b= Neurona('2');
+c= Neurona('3');
 
-f = Neurona('Daniel');
-g = Neurona('Moso');
+d= Neurona('pares')
+e = Neurona('impares')
 
-h = Neurona('Mamifero');
+a.conectarAxon(b)
+a.conectarAxon(c)
 
-a.conectarAxon(b);
-a.conectarAxon(c);
+b.conectarAxon(d)
+c.conectarAxon(e)
 
-c.conectarAxon(f)
-c.conectarAxon(g)
-c.conectarAxon(h)
-
-h.conectarAxon(d)
-h.conectarAxon(e)
+b.conectarAxon(d)
+b.conectarAxon(d)
+b.conectarAxon(d)
 
 interaccionNeuronal(a);
 
